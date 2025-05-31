@@ -19,6 +19,7 @@ if st.button("Analyze"):
         with st.spinner("🔄 Downloading and processing video..."):
             try:
                 video_path = download_video(video_url, filename="temp_video.mp4")
+                print("Temp video created")
                 audio_path = extract_audio(video_path, output_audio="temp_audio.wav")
                 accent, confidence = classify_accent(audio_path)
 
