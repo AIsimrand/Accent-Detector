@@ -18,3 +18,4 @@ transformers==4.29.2
 moviepy==1.0.3
 torchaudio
 soundfile==0.12.1
+scipy
