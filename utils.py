@@ -13,15 +13,25 @@ model = SpeakerRecognition.from_hparams(
 )
 
 # Function to extract speaker embedding
+# def get_embedding(file_path):
+#     signal, fs = torchaudio.load(file_path)
+#     with torch.no_grad():
+#         embeddings = model.encode_batch(signal)
+#     # Extract the first embedding and ensure it's 1-D
+#     embedding = embeddings.squeeze().detach().cpu().numpy()
+#     if embedding.ndim > 1:
+#         embedding = embedding.mean(axis=0)
+#     return embedding
+
+import soundfile as sf
+import torch
+
 def get_embedding(file_path):
-    signal, fs = torchaudio.load(file_path)
+    signal, fs = sf.read(file_path)
+    signal = torch.tensor(signal.T)  # transpose to [channels, time] if needed
     with torch.no_grad():
         embeddings = model.encode_batch(signal)
-    # Extract the first embedding and ensure it's 1-D
-    embedding = embeddings.squeeze().detach().cpu().numpy()
-    if embedding.ndim > 1:
-        embedding = embedding.mean(axis=0)
-    return embedding
+    return embeddings[0].squeeze()
 
 # Step 1: Load reference embeddings
 accent_refs = {
