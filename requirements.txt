@@ -1,10 +1,16 @@
---upgrade pip
---upgrade setuptools
---upgrade wheel
+# Use a stable Streamlit version
+streamlit==1.26.0
+
+# Pin sentencepiece to a prebuilt wheel version to avoid build errors
 sentencepiece==0.1.99
-streamlit
-moviepy==1.0.3 
-requests
-torchaudio
-speechbrain
-torch
+
+# Common ML libraries - only add if you really need them
+numpy==1.24.3
+pandas==2.0.2
+
+# Transformers (optional) - pin to a compatible version
+transformers==4.29.2
+
+# Other dependencies if required by your app (uncomment and pin properly)
+# scikit-learn==1.2.2
+# matplotlib==3.7.1
