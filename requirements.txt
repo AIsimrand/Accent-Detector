@@ -1,0 +1,6 @@
+streamlit
+moviepy==1.0.3 
+requests
+torchaudio
+speechbrain
+torch
