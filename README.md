@@ -21,7 +21,7 @@ A lightweight web app built with **Streamlit** that classifies a speaker's **Eng
 * [MoviePy](https://zulko.github.io/moviepy/) – for audio extraction
 * [SpeechBrain](https://speechbrain.readthedocs.io/) – for ECAPA-TDNN speaker recognition
 * [Scipy](https://scipy.org/) – for cosine similarity
-* [Torchaudio / SoundFile](https://pysoundfile.readthedocs.io/) – for audio handling
+* [SoundFile](https://pysoundfile.readthedocs.io/) – for audio handling
 
 ---
 
