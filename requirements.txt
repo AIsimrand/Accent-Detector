@@ -16,4 +16,5 @@ transformers==4.29.2
 # matplotlib==3.7.1
 
 moviepy==1.0.3
+torchaudio
 soundfile==0.12.1
