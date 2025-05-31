@@ -3,7 +3,6 @@ from moviepy.editor import VideoFileClip
 import torchaudio
 import torch
 import os
-from speechbrain.pretrained import SpeakerRecognition
 from scipy.spatial.distance import cosine
 
 # Load ECAPA-TDNN model
